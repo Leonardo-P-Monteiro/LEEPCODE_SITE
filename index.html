@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leepcode - Software House</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Cores personalizadas baseadas na logo */
+        .bg-brand-dark { background-color: #2c303a; }
+        .bg-brand-orange { background-color: #f0652f; }
+        .text-brand-dark { color: #2c303a; }
+        .text-brand-orange { color: #f0652f; }
+        .border-brand-orange { border-color: #f0652f; }
+        .hover\:bg-brand-orange-dark:hover { background-color: #d85a2a; }
+
+        /* Previne a barra de rolagem horizontal causada por animações */
+        html, body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+
+    <!-- ========== HEADER ========== -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a class="flex-shrink-0" href="#">
+                    <img class="h-10 w-auto" src="Logo_Padrão.png" alt="[Logo da Leepcode]">
+                </a>
+
+                <!-- Navegação Desktop -->
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <a href="#services" class="font-medium text-gray-600 hover:text-brand-orange transition-colors">Serviços</a>
+                    <a href="#about" class="font-medium text-gray-600 hover:text-brand-orange transition-colors">Sobre Nós</a>
+                    <a href="#contact" class="font-medium text-gray-600 hover:text-brand-orange transition-colors">Contato</a>
+                </div>
+
+                <!-- Botão Contato Desktop -->
+                <div class="hidden sm:flex">
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-brand-orange hover:bg-brand-orange-dark transition-all">
+                        Começar um Projeto
+                    </a>
+                </div>
+                
+                <!-- Botão Menu Mobile -->
+                <div class="sm:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-orange">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg class="h-6 w-6" id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                         <svg class="h-6 w-6 hidden" id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Serviços</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Sobre Nós</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contato</a>
+            </div>
+             <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="px-2">
+                     <a href="#contact" class="block w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-orange hover:bg-brand-orange-dark">Começar um Projeto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- Seção Hero -->
+        <div class="bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+                <div class="text-center">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight" data-aos="fade-down">
+                        <span class="block">Transformando Ideias em</span>
+                        <span class="block text-brand-orange mt-2">Soluções Digitais Inovadoras</span>
+                    </h1>
+                    <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                        Criamos softwares sob medida, aplicativos web e mobile que impulsionam o crescimento e a eficiência do seu negócio.
+                    </p>
+                    <div class="mt-8 flex justify-center gap-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-orange hover:bg-brand-orange-dark transition-all md:text-lg">
+                            Fale com um Especialista
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-brand-dark bg-white hover:bg-gray-100 transition-all md:text-lg">
+                            Nossos Serviços
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Serviços -->
+        <section id="services" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-brand-orange tracking-wider uppercase">Nossos Serviços</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-brand-dark tracking-tight sm:text-4xl">
+                        O que fazemos de melhor
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                        Oferecemos um portfólio completo de serviços para tirar sua ideia do papel e transformá-la em um produto de sucesso.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Serviço 1: Software Sob Medida -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="code-2" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">Desenvolvimento Sob Medida</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Criamos sistemas e plataformas personalizadas, alinhadas perfeitamente com os processos e objetivos do seu negócio.
+                        </p>
+                    </div>
+
+                    <!-- Serviço 2: Web e Mobile -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="smartphone" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">Aplicações Web & Mobile</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Desenvolvemos aplicativos responsivos e nativos para iOS e Android, garantindo a melhor experiência para seus usuários.
+                        </p>
+                    </div>
+
+                    <!-- Serviço 3: UI/UX Design -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="figma" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">UI/UX Design</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Projetamos interfaces intuitivas e atraentes, focadas na usabilidade e na jornada do usuário para maximizar o engajamento.
+                        </p>
+                    </div>
+
+                    <!-- Serviço 4: Consultoria -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="lightbulb" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">Consultoria em Tecnologia</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Ajudamos você a escolher as melhores tecnologias e a traçar a estratégia ideal para o seu projeto digital.
+                        </p>
+                    </div>
+
+                    <!-- Serviço 5: Cloud -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="cloud" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">Soluções em Nuvem</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Implementamos e gerenciamos infraestruturas escaláveis e seguras na nuvem.
+                        </p>
+                    </div>
+
+                    <!-- Serviço 6: Suporte -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-orange text-white">
+                            <i data-lucide="life-buoy" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-brand-dark">Manutenção e Suporte</h3>
+                        <p class="mt-2 text-base text-gray-600">
+                            Garantimos que suas aplicações estejam sempre atualizadas, seguras e funcionando com máxima performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Nós -->
+        <section id="about" class="bg-brand-dark text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
+                            Apaixonados por código, guiados por resultados.
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Na Leepcode, somos mais do que desenvolvedores; somos arquitetos de soluções digitais. Nossa paixão é combinar tecnologia de ponta com design intuitivo para criar softwares que não apenas atendem, mas superam as expectativas.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Com uma equipe de especialistas dedicados, estamos prontos para enfrentar seu próximo desafio e impulsionar o crescimento do seu negócio.
+                        </p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 flex justify-center" data-aos="fade-left">
+                        <img class="rounded-lg shadow-xl w-full max-w-md" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop" alt="[Equipa da Leepcode em colaboração]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="py-20 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-3xl font-extrabold text-brand-dark tracking-tight sm:text-4xl">
+                        Vamos construir algo incrível juntos?
+                    </h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                        Envie-nos uma mensagem e vamos agendar uma conversa sobre o seu projeto.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <form id="contact-form" action="https://formspree.io/f/xldlwvbd" method="POST" class="grid grid-cols-1 gap-y-6">
+                        <div>
+                            <label for="full-name" class="sr-only">Nome</label>
+                            <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-orange focus:border-brand-orange border-gray-300 rounded-md" placeholder="Nome">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-orange focus:border-brand-orange border-gray-300 rounded-md" placeholder="Seu melhor e-mail">
+                        </div>
+                        <div>
+                            <label for="phone" class="sr-only">Telefone</label>
+                            <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-orange focus:border-brand-orange border-gray-300 rounded-md" placeholder="Telefone (Opcional)">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-orange focus:border-brand-orange border-gray-300 rounded-md" placeholder="Conte-nos sobre sua ideia..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-orange hover:bg-brand-orange-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status" class="mt-4 text-center font-medium"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-brand-dark">
+        <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                 <img class="h-8 w-auto" src="Logo_Branca_Laranja.png" alt="[Logo da Leepcode]">
+            </div>
+            <div class="mt-8 flex justify-center space-x-6">
+                <!-- Links para redes sociais -->
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">LinkedIn</span>
+                    <i data-lucide="linkedin" class="h-6 w-6"></i>
+                </a>
+                <!-- <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">GitHub</span>
+                    <i data-lucide="github" class="h-6 w-6"></i>
+                </a> -->
+                <a href="https://www.instagram.com/leepcode/?utm_source=ig_web_button_share_sheet" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">Instagram</span>
+                    <i data-lucide="instagram" class="h-6 w-6"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-center text-base text-gray-400">
+                &copy; 2025 Leepcode Software House. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a 
+        href="https://wa.me/5585999068226?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20templates%20de%20sites." 
+        target="_blank" 
+        class="fixed bottom-5 right-5 z-50 p-3 bg-green-500 rounded-full shadow-lg text-white hover:bg-green-600 transition-all transform hover:scale-110"
+        aria-label="Fale conosco pelo WhatsApp"
+        data-aos="fade-up" data-aos-delay="400"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.15c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.39 0-4.54 3.67-8.21 8.21-8.21 2.23 0 4.33.86 5.8 2.34 1.48 1.48 2.34 3.57 2.34 5.81 0 4.54-3.67 8.21-8.2 8.21zm4.52-6.13c-.25-.12-1.47-.72-1.7-.82s-.39-.12-.55.12c-.16.25-.64.82-.79.98s-.29.18-.55.06c-.25-.12-1.07-.39-2.04-1.26s-1.47-1.52-1.64-1.78c-.18-.26-.02-.39.11-.51.11-.11.25-.29.37-.43s.16-.21.25-.35.04-.25-.02-.37c-.06-.12-.55-1.31-.75-1.8s-.4-.41-.55-.41-.31-.01-.47-.01c-.16 0-.43.06-.64.31s-.82.8-.82 1.95.84 2.27.96 2.43.82 1.26 2.8 2.2 1.39.6 1.88.48.8-.06.96-.35c.16-.31.16-.57.11-.69s-.09-.18-.25-.3z"/>
+        </svg>
+    </a>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Inicializa o AOS
+        AOS.init({
+            duration: 800, // Duração da animação em ms
+            once: true, // A animação acontece apenas uma vez
+            offset: 50, // "Gatilho" da animação um pouco antes de o elemento aparecer
+        });
+
+        // Script para renderizar os ícones do Lucide
+        lucide.createIcons();
+
+        // Script para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
+
+        // Fecha o menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // Script para o formulário de contato com AJAX
+        const form = document.getElementById('contact-form');
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          const status = document.getElementById('form-status');
+          const data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Obrigado por sua mensagem!";
+              status.className = 'mt-4 text-center font-medium text-green-600';
+              form.reset();
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! Houve um problema ao enviar seu formulário."
+                  status.className = 'mt-4 text-center font-medium text-red-600';
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! Houve um problema ao enviar seu formulário."
+            status.className = 'mt-4 text-center font-medium text-red-600';
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+
+</body>
+</html>
