@@ -267,26 +267,37 @@
 
     <!-- ========== FOOTER ========== -->
     <footer class="bg-brand-dark">
-        <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8 text-gray-400">
+            
+            <!-- Logo -->
             <div class="flex justify-center">
-                 <img class="h-16 w-auto" src="Logo_Branca_Laranja.png" alt="[Logo da Leepcode]">
+                <img class="h-16 w-auto" src="Logo_Branca_Laranja.png" alt="Logo da Leepcode">
             </div>
+
+            <!-- Redes Sociais -->
             <div class="mt-8 flex justify-center space-x-6">
-                <!-- Links para redes sociais -->
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <span class="sr-only">LinkedIn</span>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                     <i data-lucide="linkedin" class="h-6 w-6"></i>
                 </a>
-                <!-- <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <span class="sr-only">GitHub</span>
-                    <i data-lucide="github" class="h-6 w-6"></i>
-                </a> -->
-                <a href="https://www.instagram.com/leepcode/?utm_source=ig_web_button_share_sheet" class="text-gray-400 hover:text-gray-300">
-                    <span class="sr-only">Instagram</span>
+                <a href="https://www.instagram.com/leepcode/" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                     <i data-lucide="instagram" class="h-6 w-6"></i>
                 </a>
             </div>
-            <p class="mt-8 text-center text-base text-gray-400">
+
+            <!-- Informações de Contato -->
+            <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+                <a href="mailto:contato@leepcode.com" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="h-5 w-5"></i>
+                    <span>contato@leepcode.com.br</span>
+                </a>
+                <a href="tel:+5585999068226" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="phone" class="h-5 w-5"></i>
+                    <span>(85) 99906-8226</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="mt-8 text-center text-base">
                 &copy; 2025 Leepcode Software House. Todos os direitos reservados.
             </p>
         </div>
@@ -317,6 +328,8 @@
                 </g>
         </svg>
     </a>
+
+    
 
     <!-- AOS (Animate On Scroll) Library JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
